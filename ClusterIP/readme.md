@@ -45,7 +45,7 @@ helm install --skip-crds -f values.yaml <new-chart-name> f5-stable/f5-bigip-ctlr
 ```
 
 ## Chart parameters
-<h3>Chart parameters<a class="headerlink" href="#chart-parameters" title="Permalink to this headline">¶</a></h3>
+<h3>Chart parameters<a class="headerlink" href="#chart-parameters" title="Permalink to this headline"></a></h3>
 <table border="1" class="styled-table docutils">
 <colgroup>
 <col width="29%" />
