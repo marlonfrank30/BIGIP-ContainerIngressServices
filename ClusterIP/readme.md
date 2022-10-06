@@ -217,7 +217,6 @@ Before deploying CIS in ClusterIP mode, you need to configure BIG-IP as a node i
 tmsh show net tunnels tunnel k8s-tunnel all-properties
 ```
 
-</li>
 <li><p class="first">Update the MAC address obtained in the previous step to the following YAML file:</p>
 <div class="literal-block-wrapper docutils container" id="id8">
 <div class="code-block-caption"><span class="caption-text">bigip-node.yaml (line 9)</span><a class="headerlink" href="#id8" title="Permalink to this code">¶</a></div>
@@ -263,7 +262,7 @@ tmsh show net tunnels tunnel k8s-tunnel all-properties
 </div>
 </li>
 </ol>
-<div class="line-block">
+
 
   
 
