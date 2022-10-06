@@ -194,7 +194,7 @@ This configuration is for Standalone BIG-IP.
 
 Log in to BIG-IP and create a partition called kubernetes for CIS.
 ```
-tmsh create auth partition kubernetes
+tmsh create auth partition kube80
 ```
 Create a VXLAN profile.
 ```
@@ -202,11 +202,11 @@ tmsh create net tunnels vxlan fl-vxlan port 8472 flooding-type none
 ```
 Create a VXLAN tunnel.
 ```
-tmsh create net tunnels tunnel fl-vxlan key 1 profile fl-vxlan local-address 10.1.1.4
+tmsh create net tunnels tunnel fl-vxlan key 1 profile fl-vxlan local-address 10.1.10.249
 ```
 Create the VXLAN tunnel self IP.
 ```
-tmsh create net self 10.1.1.4 address 10.244.20.4/255.255.0.0 allow-service none vlan fl-vxlan
+tmsh create net self ocp-cis-ingress-self address 10.244.0.249/255.255.0.0 allow-service none vlan fl-vxlan
 ```
 Save the configuration.
 ```
