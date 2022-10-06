@@ -5,9 +5,9 @@
 
 - [Description](#Description)
 - [Deployment Options](#Deployment Options)
-  - [NodePort](#1) NodePort)
-  - [ClusterIP](2) #ClusterIP)
-  - [NodePortLocal](#3) NodePortLocal)
+  - [NodePort](#NodePort)
+  - [ClusterIP](#ClusterIP)
+  - [NodePortLocal](#NodePortLocal)
 
  
 ## Description
@@ -23,7 +23,7 @@ Use the following links, the navigation on the left, and/or the Next and Previou
 
 These options are configured using pool-member-type parameter in CIS deployment.
 
-## 1) NodePort
+## NodePort
 
 This section documents K8S with integration of CIS and BIG-IP using NodePort configuration. Benefits of NodePort are:
 
@@ -36,7 +36,7 @@ Similar to Docker, BIG-IP communicates with an ephemeral port, but in this case 
 When using NodePort, pool members represent the kube-proxy service on the node. BIG-IP needs a local route to the nodes. There is no need for VXLAN tunnels or Calico. BIG-IP can dynamically ARP for the Kube-proxy running on node.
 
 
-## 2) ClusterIP
+## ClusterIP
 This section documents K8S with integration of CIS and BIG-IP using clusterIP configuration. Benefits of clusterIP are:
 
 Requires ability to route to Pod
@@ -48,7 +48,7 @@ The BIG-IP CIS also supports a cluster mode where Ingress traffic bypasses the K
 
 ![ClusterIP](./images/clusterip-diagram.png)
 
-## 3) NodePortLocal
+## NodePortLocal
 This section documents K8S with integration of CIS and BIG-IP using the NodePortLocal feature provided by Antrea CNI. Benefits of NodePortLocal are:
 
 CIS consumes NPL port mappings published by the Antrea Agent (as K8s Pod annotations). So unlike NodePort mode, it bypasses the Kube-proxy and routes traffic directly to the pod removing the secondary hop of load balancing carried by kube-proxy.
