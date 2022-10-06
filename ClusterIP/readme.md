@@ -192,7 +192,7 @@ serviceaccount</td>
 ## Creating VXLAN Tunnels on Kubernetes Cluster¶
 This configuration is for Standalone BIG-IP.
 
-Log in to BIG-IP and create a partition called kubernetes for CIS.
+Log in to BIG-IP and create a partition called kube80 for CIS.
 ```
 tmsh create auth partition kube80
 ```
@@ -246,7 +246,7 @@ tmsh show net tunnels tunnel k8s-tunnel all-properties
 <span class="w">    </span><span class="nt">flannel.alpha.coreos.com/kube-subnet-manager</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="w"></span>
 <span class="nt">spec</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="c1">#Replace Subnet with your BIG-IP Flannel Subnet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">podCIDR</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;10.244.0.0/24&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">podCIDR</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;10.244.0.0/16&quot;</span><span class="w"></span>
 </pre></div></td></tr></table></div>
 </div>
 </div>
@@ -263,11 +263,19 @@ tmsh show net tunnels tunnel k8s-tunnel all-properties
 </li>
 </ol>
 
+## Create AS3 ConfigMap
+This section uses the command
+```
+kubectl apply -f configMap4nginxAS3.yaml
+```  
 
-  
+## Create any webserver inside the cluster to be used by BIGIP CIS
+I've used nginx as my webserver enginee but any other could have been installed such as apache
 
-
-
+```
+kubectl create -f nginxdeployment.yaml
+kubectl create -f nginxsvc.yaml
+```
 
 ## Uninstalling Helm Chart¶
 Run the following command to uninstall the chart.
