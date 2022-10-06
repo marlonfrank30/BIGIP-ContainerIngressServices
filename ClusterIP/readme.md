@@ -189,7 +189,7 @@ serviceaccount</td>
 
 **Source:** https://clouddocs.f5.com/containers/latest/userguide/kubernetes/#chart-parameters
 
-## Creating VXLAN Tunnels on Kubernetes Cluster¶
+## Creating VXLAN Tunnels on Kubernetes Cluster
 This configuration is for Standalone BIG-IP.
 
 Log in to BIG-IP and create a partition called kube80 for CIS.
