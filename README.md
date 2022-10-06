@@ -3,6 +3,13 @@
 # f5 Container Ingress Services (CIS) installation using vanila kubernetes
 
 
+- [Description](#Description)
+- [Deployment Options](#Deployment Options)
+- [NodePort](#NodePort)
+- [ClusterIP](#ClusterIP)
+- [NodePortLocal](#NodePortLocal)
+
+ 
 ## Description
 F5 Container Ingress Services (CIS) integrates with container orchestration environments to dynamically create L4/L7 services on F5 BIG-IP systems, and load balance network traffic across the services. Monitoring the orchestration API server, CIS is able to modify the BIG-IP system configuration based on changes made to containerized applications.
 F5 Container Ingress Services (CIS) can be configured in multiple ways depending on the customer scenario. CIS can be deployed on Kubernetes and OpenShift platform. CIS installation may differ based on the resources (for example: ConfigMap, Ingress, Routes, and CRD) used by the customer to expose the Kubernetes services. CIS installation also depends on BIG-IP deployment (stand alone and HAproxy configuration) and Kubernetes cluster networking (Flannel/Calico).
@@ -41,7 +48,7 @@ The BIG-IP CIS also supports a cluster mode where Ingress traffic bypasses the K
 
 ![ClusterIP](./images/clusterip-diagram.png)
 
-## 3) NodePortLocal¶
+## 3) NodePortLocal
 This section documents K8S with integration of CIS and BIG-IP using the NodePortLocal feature provided by Antrea CNI. Benefits of NodePortLocal are:
 
 CIS consumes NPL port mappings published by the Antrea Agent (as K8s Pod annotations). So unlike NodePort mode, it bypasses the Kube-proxy and routes traffic directly to the pod removing the secondary hop of load balancing carried by kube-proxy.
