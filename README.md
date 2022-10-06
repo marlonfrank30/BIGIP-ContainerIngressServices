@@ -6,7 +6,7 @@
 - [Description](#Description)
 - [Deployment Options](#deployment-options)
   - [NodePort](#NodePort)
-  - [ClusterIP](#/ClusterIP)
+  - [ClusterIP](#ClusterIP)
   - [NodePortLocal](#NodePortLocal)
 
  
