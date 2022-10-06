@@ -25,7 +25,7 @@ No persistence/visibility to backend Pod
 Can be deployed for “static” workloads (not ideal)
 Similar to Docker, BIG-IP communicates with an ephemeral port, but in this case the kube-proxy keeps track of the backend Pod (container). This works well, but the downside is that you have an additional layer of load balancing with the kube-proxy.
 
-../_images/nodeport-diagram.png
+![NodePort](./images/nodeport-diagram.png)
 When using NodePort, pool members represent the kube-proxy service on the node. BIG-IP needs a local route to the nodes. There is no need for VXLAN tunnels or Calico. BIG-IP can dynamically ARP for the Kube-proxy running on node.
 
 
@@ -39,12 +39,14 @@ Calico BGP
 Public Cloud network
 The BIG-IP CIS also supports a cluster mode where Ingress traffic bypasses the Kube-proxy and routes traffic directly to the pod. This requires that the BIG-IP have the ability to route to the pod. This could be by using an overlay network that F5 supports (Flannel VXLAN, or OpenShift VXLAN). Leave the kube-proxy intact (no changes to underlying Kubernetes infrastructure).
 
-../_images/clusterip-diagram.png
+![ClusterIP](./images/clusterip-diagram.png)
 
 ## 3) NodePortLocal¶
 This section documents K8S with integration of CIS and BIG-IP using the NodePortLocal feature provided by Antrea CNI. Benefits of NodePortLocal are:
 
 CIS consumes NPL port mappings published by the Antrea Agent (as K8s Pod annotations). So unlike NodePort mode, it bypasses the Kube-proxy and routes traffic directly to the pod removing the secondary hop of load balancing carried by kube-proxy.
 Exposes the port on node where pod is running. It decreases the port range requirements, unlike NodePort which requires a range of ports to be exposed in all Kubernetes nodes.
-../_images/nodeportlocal-1.png
+
+![NodePortLocal](./images/nodeportlocal-1.png)
+
 In NodePortLocal, rather than using kube-proxy for node to pod routing, there is a single iptables entry per pod which means direct connectivity to each pod.
