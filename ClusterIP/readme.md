@@ -219,7 +219,7 @@ tmsh show net tunnels tunnel k8s-tunnel all-properties
 
 <li><p class="first">Update the MAC address obtained in the previous step to the following YAML file:</p>
 <div class="literal-block-wrapper docutils container" id="id8">
-<div class="code-block-caption"><span class="caption-text">bigip-node.yaml (line 9)</span><a class="headerlink" href="#id8" title="Permalink to this code">¶</a></div>
+<div class="code-block-caption"><span class="caption-text">bigip-node.yaml (line 9)</span><a class="headerlink" href="#id8" title="Permalink to this code"></a></div>
 <div class="highlight-yaml notranslate"><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
