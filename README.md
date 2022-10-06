@@ -53,6 +53,5 @@ This section documents K8S with integration of CIS and BIG-IP using the NodePort
 
 CIS consumes NPL port mappings published by the Antrea Agent (as K8s Pod annotations). So unlike NodePort mode, it bypasses the Kube-proxy and routes traffic directly to the pod removing the secondary hop of load balancing carried by kube-proxy.
 Exposes the port on node where pod is running. It decreases the port range requirements, unlike NodePort which requires a range of ports to be exposed in all Kubernetes nodes.
-![NodePortLocal](./images/nodeportlocal-1.png)
-
 In NodePortLocal, rather than using kube-proxy for node to pod routing, there is a single iptables entry per pod which means direct connectivity to each pod.
+![NodePortLocal](./images/nodeportlocal-1.png)
