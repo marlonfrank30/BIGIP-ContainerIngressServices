@@ -1,9 +1,9 @@
-## Introduction to Helm.
+## Introduction to Helm
 
 This is the simplest way to install CIS on a Kubernetes cluster. Helm is a package manager for Kubernetes. Helm is Kubernetes version of YUM or APT. Helm deploys something called charts, which you can think of as a packaged application. It is a collection of all your versioned, pre-configured application resources which can be deployed as one unit.
 
 
-## Installing CIS Using Helm Charts¶
+## Installing CIS Using Helm Charts
 
 From Script
 Helm now has an installer script that will automatically grab the latest version of Helm and install it locally.
@@ -44,7 +44,7 @@ For Kubernetes versions lower than 1.18, please use Helm chart version 0.0.14 as
 helm install --skip-crds -f values.yaml <new-chart-name> f5-stable/f5-bigip-ctlr --version 0.0.14.
 ```
 
-## Chart parameters¶
+## Chart parameters
 <h3>Chart parameters<a class="headerlink" href="#chart-parameters" title="Permalink to this headline">¶</a></h3>
 <table border="1" class="styled-table docutils">
 <colgroup>
@@ -277,7 +277,7 @@ kubectl create -f nginxdeployment.yaml
 kubectl create -f nginxsvc.yaml
 ```
 
-## Uninstalling Helm Chart¶
+## Uninstalling Helm Chart
 Run the following command to uninstall the chart.
 
 ```
