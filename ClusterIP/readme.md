@@ -45,31 +45,7 @@ helm install --skip-crds -f values.yaml <new-chart-name> f5-stable/f5-bigip-ctlr
 ```
 
 ## Chart parameters¶
-Parameter	Required	Default	Description
-bigip_login_secret	Required	f5-bigip-ctlr-login	Secret that contains BIG-IP login credentials.
-args.bigip_url	Required	N/A	The management IP for your BIG-IP device.
-args.bigip_partition	Required	f5-bigip-ctlr	BIG-IP partition the CIS Controller will manage.
-args.namespaces	Optional	N/A	List of Kubernetes namespaces which CIS will monitor.
-rbac.create	Optional	true	Create ClusterRole and ClusterRoleBinding.
-serviceAccount.name	Optional	f5-bigip-ctlr- serviceaccount	Name of the ServiceAccount for CIS controller.
-serviceAccount.create	Optional	true	Create service account for the CIS controller.
-namespace	Optional	kube-system	Name of namespace CIS will use to create deployment and other resources.
-image.user	Optional	f5networks	CIS Controller image repository username.
-image.repo	Optional	k8s-bigip-ctlr	CIS Controller image repository name.
-image.pullPolicy	Optional	Always	CIS Controller image pull policy.
-image.pullSecrets	Optional	N/A	List of secrets of container registry to pull image.
-version	Optional	latest	CIS Controller image tag.
-nodeSelector	Optional	N/A	Dictionary of Node selector labels.
-tolerations	Optional	N/A	Array of labels.
-limits_cpu	Optional	100m	CPU limits for the pod.
-limits_memory	Optional	512Mi	Memory limits for the pod.
-requests_cpu	Optional	100m	CPU request for the pod.
-requests_memory	Optional	512Mi	Memory request for the pod.
-affinity	Optional	N/A	Dictionary of affinity.
-securityContext	Optional	N/A	Dictionary of securityContext.
-ingressClass.ingressClassName	Optional	f5	Name of ingress class.
-ingressClass.isDefaultIngressController	Optional	false	CIS will monitor all the ingress resources if set true.
-ingressClass.create	Optional	true	Create ingress class.
+https://clouddocs.f5.com/containers/latest/userguide/kubernetes/#chart-parameters
 
 ## Uninstalling Helm Chart¶
 Run the following command to uninstall the chart.
