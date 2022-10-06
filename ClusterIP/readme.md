@@ -10,7 +10,8 @@ Helm now has an installer script that will automatically grab the latest version
 
 You can fetch that script, and then execute it locally. It's well documented so that you can read through it and understand what it is doing before you run it.
 
-```curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+```
+curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
 chmod 700 get_helm.sh
 ./get_helm.sh
 ```
@@ -34,14 +35,14 @@ helm repo add f5-stable https://f5networks.github.io/charts/stable
 Install the Helm chart using the following command:
 
 ```
-helm install -f values.yaml <new-chart> f5-stable/f5-bigip-ctlr
+helm install -f values.yaml f5-ingress f5-stable/f5-bigip-ctlr
 ```
 
 Note
 For Kubernetes versions lower than 1.18, please use Helm chart version 0.0.14 as follows: helm install --skip-crds -f values.yaml <new-chart-name> f5-stable/f5-bigip-ctlr --version 0.0.14.
 
 
-Chart parameters¶
+## Chart parameters¶
 Parameter	Required	Default	Description
 bigip_login_secret	Required	f5-bigip-ctlr-login	Secret that contains BIG-IP login credentials.
 args.bigip_url	Required	N/A	The management IP for your BIG-IP device.
@@ -68,7 +69,9 @@ ingressClass.ingressClassName	Optional	f5	Name of ingress class.
 ingressClass.isDefaultIngressController	Optional	false	CIS will monitor all the ingress resources if set true.
 ingressClass.create	Optional	true	Create ingress class.
 
-Uninstalling Helm Chart¶
+## Uninstalling Helm Chart¶
 Run the following command to uninstall the chart.
 
-helm del <new-chart>
+```
+helm del f5-ingress
+```
