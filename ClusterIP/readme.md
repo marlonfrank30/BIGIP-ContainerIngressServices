@@ -38,7 +38,7 @@ Install the Helm chart using the following command:
 helm install -f values.yaml f5-ingress f5-stable/f5-bigip-ctlr
 ```
 
-Note
+**Note**
 For Kubernetes versions lower than 1.18, please use Helm chart version 0.0.14 as follows: 
 ```
 helm install --skip-crds -f values.yaml <new-chart-name> f5-stable/f5-bigip-ctlr --version 0.0.14.
