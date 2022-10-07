@@ -252,7 +252,7 @@ tmsh show net tunnels tunnel k8s-tunnel all-properties
 </div>
 </li>
 <li><p class="first">Create the BIG-IP node:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">create</span> <span class="o">-</span><span class="n">f</span> <span class="n">bigip</span><span class="o">-</span><span class="n">node</span><span class="o">.</span><span class="n">yaml</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">create</span> <span class="o">-</span><span class="n">f</span> <span class="n">f5</span><span class="o">-</span><span class="n">node</span><span class="o">.</span><span class="n">yaml</span>
 </pre></div>
 </div>
 </li>
