@@ -246,7 +246,7 @@ tmsh show net tunnels tunnel k8s-tunnel all-properties
 <span class="w">    </span><span class="nt">flannel.alpha.coreos.com/kube-subnet-manager</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="w"></span>
 <span class="nt">spec</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="c1">#Replace Subnet with your BIG-IP Flannel Subnet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">podCIDR</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;10.244.0.0/16&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">podCIDR</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;10.244.20.0/24&quot;</span><span class="w"></span>
 </pre></div></td></tr></table></div>
 </div>
 </div>
