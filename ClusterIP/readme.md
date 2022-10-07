@@ -212,14 +212,14 @@ Save the configuration.
 ```
 tmsh save sys config
 ```
-Before deploying CIS in ClusterIP mode, you need to configure BIG-IP as a node in the Kubernetes cluster. To do so you will need to modify bigip-node.yaml with the MAC address auto-created from the previous steps. From the jumpbox terminal, run the following command at bigip1. Copy the displayed MAC Address.
+Before deploying CIS in ClusterIP mode, you need to configure BIG-IP as a node in the Kubernetes cluster. To do so you will need to modify f5-node.yaml with the MAC address auto-created from the previous steps. From the jumpbox terminal, run the following command at bigip1. Copy the displayed MAC Address.
 ```
 tmsh show net tunnels tunnel k8s-tunnel all-properties
 ```
 
 <li><p class="first">Update the MAC address obtained in the previous step to the following YAML file:</p>
 <div class="literal-block-wrapper docutils container" id="id8">
-<div class="code-block-caption"><span class="caption-text">bigip-node.yaml (line 9)</span><a class="headerlink" href="#id8" title="Permalink to this code"></a></div>
+<div class="code-block-caption"><span class="caption-text">f5-node.yaml (line 9)</span><a class="headerlink" href="#id8" title="Permalink to this code"></a></div>
 <div class="highlight-yaml notranslate"><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -269,7 +269,7 @@ This section uses the command
 kubectl apply -f configMap4nginxAS3.yaml
 ```  
 
-## Create any webserver inside the cluster to be used by BIGIP CIS
+## Create any webserver inside the cluster to be used by CIS
 I've used nginx as my webserver enginee but any other could have been installed such as apache
 
 ```
