@@ -6,7 +6,7 @@
 - [Description](#Description)
 - [Deployment Options](#deployment-options)
   - [NodePort](#NodePort)
-  - [https://github.com/marlonfrank30/BIGIP-ContainerIngressServices/tree/main/ClusterIP ClusterIP]
+  - [ClusterIP](https://github.com/marlonfrank30/BIGIP-ContainerIngressServices/tree/main/ClusterIP#introduction-to-helm)
   - [NodePortLocal](#NodePortLocal)
 
  
