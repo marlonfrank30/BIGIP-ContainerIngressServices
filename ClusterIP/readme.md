@@ -212,7 +212,7 @@ Save the configuration.
 ```
 tmsh save sys config
 ```
-Before deploying CIS in ClusterIP mode, you need to configure BIG-IP as a node in the Kubernetes cluster. To do so you will need to modify f5-node.yaml with the MAC address auto-created from the previous steps. From the jumpbox terminal, run the following command at bigip1. Copy the displayed MAC Address.
+Before deploying CIS in ClusterIP mode, you need to configure BIG-IP as a node in the Kubernetes cluster. To do so you will need to modify f5-node.yaml with the MAC address auto-created from the previous steps. Run the following command at bigip1. Copy the displayed MAC Address.
 ```
 tmsh show net tunnels tunnel k8s-tunnel all-properties
 ```
