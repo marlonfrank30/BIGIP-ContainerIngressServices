@@ -16,8 +16,6 @@ F5 Container Ingress Services (CIS) can be configured in multiple ways depending
 
 The F5 BIG-IP Controller for Kubernetes lets you manage your F5 BIG-IP device from Kubernetes or OpenShift using either environment’s native CLI/API.
 
-Use the following links, the navigation on the left, and/or the Next and Previous buttons to explore the documentation.
-
 
 ## Deployment Options
 
