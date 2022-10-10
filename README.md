@@ -23,7 +23,8 @@ These options are configured using pool-member-type parameter in CIS deployment.
 
 ## NodePort
 
-This section documents K8S with integration of CIS and BIG-IP using NodePort configuration. 
+This section documents K8S with integration of CIS and BIG-IP using NodePort configuration.
+
 Benefits of NodePort are:
 
 * It works in any environment (no requirement for SDN)
