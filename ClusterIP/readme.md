@@ -3,7 +3,7 @@
 This is the simplest way to install CIS on a Kubernetes cluster. Helm is a package manager for Kubernetes. Helm is Kubernetes version of YUM or APT. Helm deploys something called charts, which you can think of as a packaged application. It is a collection of all your versioned, pre-configured application resources which can be deployed as one unit.
 
 
-## Installing CIS Using Helm Charts
+## Installing Helm Charts
 
 From Script
 Helm now has an installer script that will automatically grab the latest version of Helm and install it locally.
