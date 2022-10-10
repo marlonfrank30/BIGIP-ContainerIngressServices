@@ -190,35 +190,38 @@ serviceaccount</td>
 **Source:** https://clouddocs.f5.com/containers/latest/userguide/kubernetes/#chart-parameters
 
 **Note:** for the BIGIP CIS as NodePort you don't need a flannel VLXAN tunnel
-<del>
-## Creating VXLAN Tunnels on Kubernetes Cluster
+
+  <del> ## Creating VXLAN Tunnels on Kubernetes Cluster </del>
+  
 This configuration is for Standalone BIG-IP.
-</del>
+
 Log in to BIG-IP and create a partition called kube80 for CIS.
 ```
 tmsh create auth partition kube80
 ```
-Create a VXLAN profile.
+
+<del> Create a VXLAN profile. </del>
 ```
 tmsh create net tunnels vxlan fl-vxlan port 8472 flooding-type none
 ```
-Create a VXLAN tunnel.
+<del> Create a VXLAN tunnel. </del>
 ```
 tmsh create net tunnels tunnel fl-vxlan key 1 profile fl-vxlan local-address 10.1.10.249
 ```
-Create the VXLAN tunnel self IP.
+<del> Create the VXLAN tunnel self IP. </del>
 ```
 tmsh create net self ocp-cis-ingress-self address 10.244.20.249/255.255.0.0 allow-service none vlan fl-vxlan
 ```
-Save the configuration.
+<del> Save the configuration. </del>
 ```
 tmsh save sys config
 ```
-Before deploying CIS in ClusterIP mode, you need to configure BIG-IP as a node in the Kubernetes cluster. To do so you will need to modify f5-node.yaml with the MAC address auto-created from the previous steps. Run the following command at bigip1. Copy the displayed MAC Address.
+Before deploying CIS in NodePort mode, you need to configure BIG-IP as a node in the Kubernetes cluster. 
+<del> To do so you will need to modify f5-node.yaml with the MAC address auto-created from the previous steps. Run the following command at bigip1. Copy the displayed MAC Address. </del>
 ```
 tmsh show net tunnels tunnel k8s-tunnel all-properties
 ```
-<li><p class="first">Update the MAC address obtained in the previous step to the following YAML file:</p>
+<li><p class="first"><del> Update the MAC address obtained in the previous step to the following YAML file: </del></p>
 <div class="literal-block-wrapper docutils container" id="id8">
 <div class="code-block-caption"><span class="caption-text">f5-node.yaml (line 9)</span><a class="headerlink" href="#id8" title="Permalink to this code"></a></div>
 <div class="highlight-yaml notranslate"><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
@@ -263,7 +266,7 @@ tmsh show net tunnels tunnel k8s-tunnel all-properties
 </div>
 </li>
 </ol>
-
+~~
 ## Create AS3 ConfigMap
 This section uses the command
 ```
