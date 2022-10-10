@@ -15,31 +15,6 @@ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scrip
 chmod 700 get_helm.sh
 ./get_helm.sh
 ```
-Prerequisites 
-Ensure that the necessary requirements for running Antrea are met https://antrea.io/docs/main/docs/getting-started/#ensuring-requirements-are-satisfied.
-
-Ensure that Helm 3 is installed. 
-We recommend using a recent version of Helm if possible. Refer to the Helm documentation for compatibility between Helm and Kubernetes versions.
-
-## Add Antrea Helm chart's repository:
-```
-helm repo add antrea https://charts.antrea.io
-helm repo update
-```
-## Installing Antrea with Helm 
-To install the Antrea Helm chart, use the following command:
-```
-helm install antrea antrea/antrea --namespace kube-system
-This will install the latest available version of Antrea. You can also install a specific version of Antrea (>= v1.8.0) with --version <TAG>.
-```
-Upgrade
-To upgrade the Antrea Helm chart, use the following commands:
-**Note: Upgrading CRDs requires an extra step; see explanation below**
-```
-kubectl apply -f https://github.com/antrea-io/antrea/releases/download/<TAG>/antrea-crds.yml
-helm upgrade antrea antrea/antrea --namespace kube-system --version <TAG>
-```
-
 ## Installing BIGIP CIS in NodePort mode
 Add BIG-IP credentials as K8S secrets.
 
