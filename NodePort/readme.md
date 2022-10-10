@@ -3,7 +3,7 @@
 This is the simplest way to install CIS on a Kubernetes cluster. Helm is a package manager for Kubernetes. Helm is Kubernetes version of YUM or APT. Helm deploys something called charts, which you can think of as a packaged application. It is a collection of all your versioned, pre-configured application resources which can be deployed as one unit.
 
 
-## Installing CIS Using Helm Charts
+## Installing Helm Charts
 
 From Script
 Helm now has an installer script that will automatically grab the latest version of Helm and install it locally.
@@ -15,17 +15,18 @@ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scrip
 chmod 700 get_helm.sh
 ./get_helm.sh
 ```
-Prerequisites
-Ensure that the necessary requirements for running Antrea are met.
+Prerequisites 
+Ensure that the necessary requirements for running Antrea are met https://antrea.io/docs/main/docs/getting-started/#ensuring-requirements-are-satisfied.
 
-Ensure that Helm 3 is installed. We recommend using a recent version of Helm if possible. Refer to the Helm documentation for compatibility between Helm and Kubernetes versions.
+Ensure that Helm 3 is installed. 
+We recommend using a recent version of Helm if possible. Refer to the Helm documentation for compatibility between Helm and Kubernetes versions.
 
-Add the Antrea Helm chart repository:
+## Add Antrea Helm chart's repository:
 ```
 helm repo add antrea https://charts.antrea.io
 helm repo update
 ```
-## Antrea Installation
+## Installing Antrea with Helm 
 To install the Antrea Helm chart, use the following command:
 ```
 helm install antrea antrea/antrea --namespace kube-system
