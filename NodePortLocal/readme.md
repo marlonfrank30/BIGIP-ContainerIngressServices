@@ -37,7 +37,7 @@ helm install antrea antrea/antrea --namespace kube-system
 ```
 This will install the latest available version of Antrea. You can also install a specific version of Antrea (>= v1.8.0) with --version <TAG>.
 
-Upgrade
+## Upgrading Antrea with Helm
   
 To upgrade the Antrea Helm chart, use the following commands:
   
