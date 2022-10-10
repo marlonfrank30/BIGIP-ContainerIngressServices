@@ -191,7 +191,7 @@ serviceaccount</td>
 
 **Note:** for the BIGIP CIS as NodePort you don't need a flannel VLXAN tunnel
 
-  <del> ## Creating VXLAN Tunnels on Kubernetes Cluster </del>
+  ## <del> Creating VXLAN Tunnels on Kubernetes Cluster </del>
   
 This configuration is for Standalone BIG-IP.
 
