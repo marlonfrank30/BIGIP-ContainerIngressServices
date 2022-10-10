@@ -212,7 +212,7 @@ tmsh create net tunnels tunnel fl-vxlan key 1 profile fl-vxlan local-address 10.
 ```
 tmsh create net self ocp-cis-ingress-self address 10.244.20.249/255.255.0.0 allow-service none vlan fl-vxlan
 ```
-<del> Save the configuration. </del>
+Save the configuration.
 ```
 tmsh save sys config
 ```
