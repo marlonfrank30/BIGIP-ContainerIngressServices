@@ -19,6 +19,7 @@ chmod 700 get_helm.sh
 more info is available here https://helm.sh/docs/intro/install/
 
 Prerequisites 
+
 Ensure that the necessary requirements for running Antrea are met https://antrea.io/docs/main/docs/getting-started/#ensuring-requirements-are-satisfied.
 
 Ensure that Helm 3 is installed. 
@@ -37,6 +38,7 @@ helm install antrea antrea/antrea --namespace kube-system
 This will install the latest available version of Antrea. You can also install a specific version of Antrea (>= v1.8.0) with --version <TAG>.
 
 Upgrade
+  
 To upgrade the Antrea Helm chart, use the following commands:
 **Note: Upgrading CRDs requires an extra step; see explanation below**
 ```
