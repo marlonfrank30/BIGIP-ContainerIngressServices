@@ -73,3 +73,7 @@ Benefits of NodePortLocal are:
 Limitations of NodePortLocal are:
 * This feature is currently only supported for Nodes running Linux or Windows with IPv4 addresses. 
 * Only TCP & UDP Service ports are supported (not SCTP).
+* NodePortLocal can only be used with Services of type ClusterIP or LoadBalancer.
+* The nodeportlocal.antrea.io annotation has no effect for Services of type NodePort or ExternalName.
+* It also has no effect for Services with an empty or missing Selector.
+* CIS currently supports NPL feature with Ingress, Configmap and Virtualserver resource. The feature is validated on k8s Tanzu infrastructure.
