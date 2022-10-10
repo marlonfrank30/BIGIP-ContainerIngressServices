@@ -15,6 +15,8 @@ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scrip
 chmod 700 get_helm.sh
 ./get_helm.sh
 ```
+more info is available here https://helm.sh/docs/intro/install/
+
 ## Installing BIGIP CIS in NodePort mode
 Add BIG-IP credentials as K8S secrets.
 
