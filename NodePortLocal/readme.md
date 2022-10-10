@@ -40,6 +40,7 @@ This will install the latest available version of Antrea. You can also install a
 Upgrade
   
 To upgrade the Antrea Helm chart, use the following commands:
+  
 **Note: Upgrading CRDs requires an extra step; see explanation below**
 ```
 kubectl apply -f https://github.com/antrea-io/antrea/releases/download/<TAG>/antrea-crds.yml
