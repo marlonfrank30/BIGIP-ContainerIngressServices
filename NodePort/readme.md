@@ -198,17 +198,17 @@ Log in to BIG-IP and create a partition called kube80 for CIS.
 ```
 tmsh create auth partition kube80
 ```
-Create a VXLAN profile.
+<del>Create a VXLAN profile.
 ```
-tmsh create net tunnels vxlan fl-vxlan port 8472 flooding-type none
+<del>tmsh create net tunnels vxlan fl-vxlan port 8472 flooding-type none
 ```
-Create a VXLAN tunnel.
+<del>Create a VXLAN tunnel.
 ```
-tmsh create net tunnels tunnel fl-vxlan key 1 profile fl-vxlan local-address 10.1.10.249
+<del>tmsh create net tunnels tunnel fl-vxlan key 1 profile fl-vxlan local-address 10.1.10.249
 ```
-Create the VXLAN tunnel self IP.
+<del>Create the VXLAN tunnel self IP.
 ```
-tmsh create net self ocp-cis-ingress-self address 10.244.20.249/255.255.0.0 allow-service none vlan fl-vxlan
+<del>tmsh create net self ocp-cis-ingress-self address 10.244.20.249/255.255.0.0 allow-service none vlan fl-vxlan
 ```
 Save the configuration.
 ```
@@ -218,7 +218,6 @@ Before deploying CIS in ClusterIP mode, you need to configure BIG-IP as a node i
 ```
 tmsh show net tunnels tunnel k8s-tunnel all-properties
 ```
-</del>
 <li><p class="first">Update the MAC address obtained in the previous step to the following YAML file:</p>
 <div class="literal-block-wrapper docutils container" id="id8">
 <div class="code-block-caption"><span class="caption-text">f5-node.yaml (line 9)</span><a class="headerlink" href="#id8" title="Permalink to this code"></a></div>
