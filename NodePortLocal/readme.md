@@ -46,6 +46,8 @@ To upgrade the Antrea Helm chart, use the following commands:
 kubectl apply -f https://github.com/antrea-io/antrea/releases/download/<TAG>/antrea-crds.yml
 helm upgrade antrea antrea/antrea --namespace kube-system --version <TAG>
 ```
+  
+**Source: https://antrea.io/docs/main/docs/helm/
 
 ## Installing BIGIP CIS in ClusterIP mode
 Add BIG-IP credentials as K8S secrets.
