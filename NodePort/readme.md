@@ -189,7 +189,7 @@ serviceaccount</td>
 
 **Source:** https://clouddocs.f5.com/containers/latest/userguide/kubernetes/#chart-parameters
 
-**Note:** for the BIGIP CIS as NodePort you don't need a flannel VLXAN tunnel
+**Note: for the BIGIP CIS as NodePort you don't need a flannel VLXAN tunnel**
 
 This configuration is for Standalone BIG-IP.
 
