@@ -69,3 +69,7 @@ Benefits of NodePortLocal are:
 * In NodePortLocal, rather than using kube-proxy for node to pod routing, there is a single iptables entry per pod which means direct connectivity to each pod.
 
 ![NodePortLocal](./images/nodeportlocal-1.png)
+
+Limitations of NodePortLocal are:
+* This feature is currently only supported for Nodes running Linux or Windows with IPv4 addresses. 
+* Only TCP & UDP Service ports are supported (not SCTP).
