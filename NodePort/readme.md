@@ -193,23 +193,24 @@ serviceaccount</td>
 <del>
 ## Creating VXLAN Tunnels on Kubernetes Cluster
 This configuration is for Standalone BIG-IP.
-
+</del>
 Log in to BIG-IP and create a partition called kube80 for CIS.
 ```
 tmsh create auth partition kube80
 ```
-<del>Create a VXLAN profile.
+Create a VXLAN profile.
 ```
-<del>tmsh create net tunnels vxlan fl-vxlan port 8472 flooding-type none
+tmsh create net tunnels vxlan fl-vxlan port 8472 flooding-type none
 ```
-<del>Create a VXLAN tunnel.
+Create a VXLAN tunnel.
 ```
-<del>tmsh create net tunnels tunnel fl-vxlan key 1 profile fl-vxlan local-address 10.1.10.249
+tmsh create net tunnels tunnel fl-vxlan key 1 profile fl-vxlan local-address 10.1.10.249
 ```
-<del>Create the VXLAN tunnel self IP.
+Create the VXLAN tunnel self IP.
 ```
-<del>tmsh create net self ocp-cis-ingress-self address 10.244.20.249/255.255.0.0 allow-service none vlan fl-vxlan
+tmsh create net self ocp-cis-ingress-self address 10.244.20.249/255.255.0.0 allow-service none vlan fl-vxlan
 ```
+</del>
 Save the configuration.
 ```
 tmsh save sys config
