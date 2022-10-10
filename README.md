@@ -23,7 +23,8 @@ These options are configured using pool-member-type parameter in CIS deployment.
 
 ## NodePort
 
-This section documents K8S with integration of CIS and BIG-IP using NodePort configuration. Benefits of NodePort are:
+This section documents K8S with integration of CIS and BIG-IP using NodePort configuration. 
+Benefits of NodePort are:
 
 * It works in any environment (no requirement for SDN)
 * No persistence/visibility to backend Pod
@@ -31,6 +32,14 @@ This section documents K8S with integration of CIS and BIG-IP using NodePort con
 * Similar to Docker, BIG-IP communicates with an ephemeral port, but in this case the kube-proxy keeps track of the backend Pod (container). This works well, but the downside is that you have an additional layer of load balancing with the kube-proxy.
 
 ![NodePort](./images/nodeport-diagram.png)
+
+Limitations of NodePort are:
+
+* Be available on all nodes, even those not running an exposed pod
+* Potentially add an additional hop between nodes
+* Probably load-balance imperfectly to backend pods
+* Traverse kube-proxy, adding another layer of loadbalancing and potentially minor latency
+
 When using NodePort, pool members represent the kube-proxy service on the node. BIG-IP needs a local route to the nodes. There is no need for VXLAN tunnels or Calico. BIG-IP can dynamically ARP for the Kube-proxy running on node.
 
 
