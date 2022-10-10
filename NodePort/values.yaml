@@ -34,14 +34,14 @@ args:
   # python_basedir: ~
   # VXLAN
   # openshift_sdn_name:
-  flannel_name: /Common/fl-vxlan
+  #flannel_name: /Common/fl-vxlan
   # KUBERNETES
   default_ingress_ip: 10.10.0.100
   # kubeconfig:
   # namespaces: ["cis-app", "default"]
   # namespace_label:
   # node_label_selector:
-  pool_member_type: cluster
+  pool_member_type: nodeport #cluster
   # resolve_ingress_names:
   # running_in_cluster:
   # use_node_internal:
