@@ -65,12 +65,16 @@ helm install antrea antrea/antrea --namespace kube-system
 ```
 This will install the latest available version of Antrea. You can also install a specific version of Antrea (>= v1.8.0) with --version v1.8.0
 
-For the step below, edit the configmap used by antrea and add the following entry under 
-  **featureGates: 
-      NodePortLocal: true** 
+For the step below, edit the configmap used by antrea and add the following entry under:
+  **featureGates:** 
+  
+    **NodePortLocal: true** 
+  
     and also 
-  **nodePortLocal: 
-    enable: true**
+  
+  **nodePortLocal:** 
+  
+    **enable: true**
 
   
 ```
