@@ -23,7 +23,7 @@ more info is available here https://helm.sh/docs/intro/install/
 The instructions above only apply when deploying Antrea in a new cluster. If you need to migrate your existing cluster from another CNI plugin to Antrea, you will need to do the following:
 
 * Delete previous CNI, including all resources (K8s objects, iptables rules, interfaces, …) created by the Flannel CNI.
-* Deploy Antrea (next item below).
+* Deploy Antrea [next item below)](#adding-antrea-helm-charts-repository)
 * Restart all Pods in the CNI network in order for Antrea to set-up networking for them. This does not apply to Pods which use the Node’s network namespace (i.e. Pods configured with hostNetwork: true). You may use kubectl drain to drain each Node or reboot all your Nodes.
 
 While this is in-progress, networking will be disrupted in your cluster. After deleting the previous CNI, existing Pods may not be reachable anymore.
