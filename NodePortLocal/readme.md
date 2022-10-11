@@ -73,7 +73,9 @@ For the step below, edit the configmap used by antrea and add the following entr
     NodePortLocal: true 
   ```
   
-    and also 
+  
+  and also 
+  
   
   ```
    nodePortLocal: 
