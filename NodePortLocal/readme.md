@@ -283,9 +283,9 @@ Log in to BIG-IP and create a partition called kube80 for CIS.
 tmsh create auth partition kube80
 ```
 
-Create the selfIP.
+Create the selfIP (it doesn' use vxlan tunnel).
 ```
-tmsh create net self ocp-cis-ingress-self address 10.244.20.249/255.255.0.0 allow-service none vlan fl-vxlan
+tmsh create net self ocp-cis-ingress-self address 10.1.10.249/255.255.0.0 allow-service none vlan ocp_spk_ingress
 ```
 Save the configuration.
 ```
