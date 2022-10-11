@@ -86,6 +86,12 @@ For the step below, edit the configmap used by antrea and add the following entr
 ```
 kubectl edit configmap antrea-config -n kube-system
 ```
+
+and then delete all the pods in kube-system namespace in order to use the newly created CNI Antrea
+  
+```
+kubectl delete pods -n kube-system $(oc get pods -n kube-system | awk '{ print $1 }')
+```  
   
 ## Upgrading Antrea with Helm (optional)
   
