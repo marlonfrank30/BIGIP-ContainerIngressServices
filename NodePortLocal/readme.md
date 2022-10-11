@@ -338,18 +338,12 @@ Before deploying CIS in NodePortLocal mode, you need to configure BIG-IP as a no
 </li>
 </ol>
 
-## Create AS3 ConfigMap
-This section uses the command
-```
-kubectl apply -f configMap4nginxAS3.yaml
-```  
 
 ## Create any webserver inside the cluster to be used by CIS
 I've used nginx as my webserver enginee but any other could have been installed such as apache
 
 ```
-kubectl create -f nginxdeployment.yaml
-kubectl create -f nginxsvc.yaml
+kubectl create -f VirtualServer.yaml
 ```
 
 ## Uninstalling Helm Chart
