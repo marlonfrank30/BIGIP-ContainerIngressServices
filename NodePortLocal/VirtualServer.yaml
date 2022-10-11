@@ -1,0 +1,51 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-svc
+  annotations:
+    nodeportlocal.antrea.io/enabled: "true"
+spec:
+  #type: NodePort
+  ports:
+  - name: web
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: nginx
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+---
+apiVersion: "cis.f5.com/v1"
+kind: VirtualServer
+metadata:
+   name: nginx-vs
+   labels:
+     f5cr: "true"
+spec:
+   virtualServerAddress: "10.1.10.101"
+   pools:
+   - path: /
+     service: nginx-svc
+     servicePort: 80
+     monitor:
+       type: "http"
+       send: "GET /\r\n"
+       interval: 5
+
