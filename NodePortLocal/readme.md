@@ -43,8 +43,8 @@ To upgrade the Antrea Helm chart, use the following commands:
   
 **Note:** Upgrading CRDs requires an extra step; see explanation below
 ```
-kubectl apply -f https://github.com/antrea-io/antrea/releases/download/<TAG>/antrea-crds.yml
-helm upgrade antrea antrea/antrea --namespace kube-system --version <TAG>
+kubectl apply -f https://github.com/antrea-io/antrea/releases/download/v1.8.0/antrea-crds.yml
+helm upgrade antrea antrea/antrea --namespace kube-system --version v1.8.0
 ```
   
 **Source:** https://antrea.io/docs/main/docs/helm/
