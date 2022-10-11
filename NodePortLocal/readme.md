@@ -68,11 +68,14 @@ This will install the latest available version of Antrea. You can also install a
 
 For the step below, edit the configmap used by antrea and add the following entry under:
 ```
+kubectl edit configmap antrea-config -n kube-system
+```
+  
+```
   featureGates: 
   
     NodePortLocal: true 
   ```
-  
   
   and also 
   
@@ -83,10 +86,6 @@ For the step below, edit the configmap used by antrea and add the following entr
      enable: true
 ```
   
-```
-kubectl edit configmap antrea-config -n kube-system
-```
-
 and then delete all the pods in kube-system namespace in order to use the newly created CNI Antrea
   
 ```
