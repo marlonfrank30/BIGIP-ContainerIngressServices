@@ -42,7 +42,8 @@ ip link delete flannel.1 && ip link delete flannel cni0
   
 * 3) Ensure requirements are satisfied (where everything pod related to flannel is deleted).
 
-* 4) [Deploy Antrea](#Installing Antrea with Helm)
+* 4) Deploy Antrea (item Adding Antrea Helm chart's repository below) 
+
 * 5) Drain and uncordon Nodes one-by-one. For each Node, run kubectl drain --ignore-daemonsets <node name> && kubectl uncordon <node name>. The --ignore-daemonsets flag will ignore DaemonSet-managed Pods, including the Antrea Agent Pods. If you have any other DaemonSet-managed Pods (besides the Antrea ones and system ones such as kube-proxy), they will be ignored and will not be drained from the Node. Refer to the Kubernetes documentation for more information. Alternatively, you can also restart all the Pods yourself, or simply reboot your Nodes.
   
   
