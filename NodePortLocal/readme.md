@@ -49,7 +49,7 @@ helm upgrade antrea antrea/antrea --namespace kube-system --version v1.8.0
   
 **Source:** https://antrea.io/docs/main/docs/helm/
 
-## Installing BIGIP CIS in ClusterIP mode
+## Installing BIGIP CIS in NodePortLocal mode
 Add BIG-IP credentials as K8S secrets.
 
 For Kubernetes, use the following command:
