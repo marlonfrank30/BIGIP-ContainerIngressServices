@@ -25,7 +25,7 @@ data:
                         "class": "Service_HTTP",
                         "remark": "nginx1",
                         "virtualAddresses": [
-                            "10.10.0.110"
+                            "10.10.0.111"
                         ],
                         "pool": "nginx1_pool"
                     },
@@ -37,6 +37,7 @@ data:
                         "members": [
                             {
                                 "servicePort": 80,
+                                "shareNodes": true,
                                 "serverAddresses": []
                             }
                         ]

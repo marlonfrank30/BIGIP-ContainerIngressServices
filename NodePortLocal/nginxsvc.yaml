@@ -8,6 +8,8 @@ metadata:
     cis.f5.com/as3-tenant: WEB1
     cis.f5.com/as3-app: NGINX1
     cis.f5.com/as3-pool: nginx1_pool
+  annotations: 
+    nodeportlocal.antrea.io/enabled: "true"
 spec:
   selector:
     app: nginx1
@@ -16,5 +18,5 @@ spec:
       protocol: TCP
       port: 80
       targetPort: myhttpport
-  type: NodePort #ClusterIP
+  type: ClusterIP
 

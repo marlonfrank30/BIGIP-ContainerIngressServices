@@ -38,22 +38,23 @@ args:
   # KUBERNETES
   default_ingress_ip: 10.10.0.100
   # kubeconfig:
-  # namespaces: ["cis-app", "default"]
+  namespaces: ["default"]
   # namespace_label:
   # node_label_selector:
-  pool_member_type: nodeport #cluster
+  # disable_teems: true
+  pool_member_type: nodeportlocal
   # resolve_ingress_names:
   # running_in_cluster:
   # use_node_internal:
   # use_secrets:
   insecure: true
-  # custom-resource-mode: true
-  log-as3-response: true
+  custom_resource_mode: true
+  log_as3_response: true
   # gtm-bigip-password
   # gtm-bigip-url
   # gtm-bigip-username
   # ipam : true
-
+  log_level: DEBUG
 image:
   # Use the tag to target a specific version of the Controller
   user: f5networks
