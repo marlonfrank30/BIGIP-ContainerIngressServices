@@ -291,7 +291,7 @@ Save the configuration.
 ```
 tmsh save sys config
 ```
-Before deploying CIS in ClusterIP mode, you need to configure BIG-IP as a node in the Kubernetes cluster. Run the following command at bigip1. 
+Before deploying CIS in NodePortLocal mode, you need to configure BIG-IP as a node in the Kubernetes cluster. Run the following command at bigip1. 
   
 <div class="literal-block-wrapper docutils container" id="id8">
 <div class="code-block-caption"><span class="caption-text">f5-node.yaml</span><a class="headerlink" href="#id8" title="Permalink to this code"></a></div>
