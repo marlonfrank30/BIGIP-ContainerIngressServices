@@ -282,14 +282,7 @@ Log in to BIG-IP and create a partition called kube80 for CIS.
 ```
 tmsh create auth partition kube80
 ```
-Create a VXLAN profile.
-```
-tmsh create net tunnels vxlan fl-vxlan port 8472 flooding-type none
-```
-Create a VXLAN tunnel.
-```
-tmsh create net tunnels tunnel fl-vxlan key 1 profile fl-vxlan local-address 10.1.10.249
-```
+
 Create the VXLAN tunnel self IP.
 ```
 tmsh create net self ocp-cis-ingress-self address 10.244.20.249/255.255.0.0 allow-service none vlan fl-vxlan
@@ -298,14 +291,10 @@ Save the configuration.
 ```
 tmsh save sys config
 ```
-Before deploying CIS in ClusterIP mode, you need to configure BIG-IP as a node in the Kubernetes cluster. To do so you will need to modify f5-node.yaml with the MAC address auto-created from the previous steps. Run the following command at bigip1. Copy the displayed MAC Address.
-```
-tmsh show net tunnels tunnel k8s-tunnel all-properties
-```
-
-<li><p class="first">Update the MAC address obtained in the previous step to the following YAML file:</p>
+Before deploying CIS in ClusterIP mode, you need to configure BIG-IP as a node in the Kubernetes cluster. To do so you will need to modify f5-node.yaml with the MAC address auto-created from the previous steps. Run the following command at bigip1. 
+  
 <div class="literal-block-wrapper docutils container" id="id8">
-<div class="code-block-caption"><span class="caption-text">f5-node.yaml (line 9)</span><a class="headerlink" href="#id8" title="Permalink to this code"></a></div>
+<div class="code-block-caption"><span class="caption-text">f5-node.yaml</span><a class="headerlink" href="#id8" title="Permalink to this code"></a></div>
 <div class="highlight-yaml notranslate"><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -326,7 +315,7 @@ tmsh show net tunnels tunnel k8s-tunnel all-properties
 <span class="w">  </span><span class="nt">annotations</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="c1">#Replace IP with self IP for your deployment</span><span class="w"></span>
 <span class="w">    </span><span class="nt">flannel.alpha.coreos.com/public-ip</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;10.1.10.249&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="c1">#Replace MAC with your BIG-IP Flannel VXLAN Tunnel MAC</span><span class="w"></span>
+<span class="w">    </span><span class="c1">#</span><span class="w"></span>
 <span class="w">    </span><span class="nt">flannel.alpha.coreos.com/backend-data</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;{&quot;VtepMAC&quot;:&quot;2c:c2:60:23:0c:58&quot;}&#39;</span><span class="w"></span>
 <span class="w">    </span><span class="nt">flannel.alpha.coreos.com/backend-type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;vxlan&quot;</span><span class="w"></span>
 <span class="w">    </span><span class="nt">flannel.alpha.coreos.com/kube-subnet-manager</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="w"></span>
