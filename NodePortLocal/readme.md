@@ -18,7 +18,7 @@ chmod 700 get_helm.sh
 
 more info is available here https://helm.sh/docs/intro/install/
 
-Prerequisites 
+## Prerequisites 
 
 Ensure that the necessary requirements for running Antrea are met https://antrea.io/docs/main/docs/getting-started/#ensuring-requirements-are-satisfied.
 
