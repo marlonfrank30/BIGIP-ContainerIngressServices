@@ -25,7 +25,7 @@ Ensure that the necessary requirements for running Antrea are met https://antrea
 Ensure that Helm 3 is installed. 
 We recommend using a recent version of Helm if possible. Refer to the Helm documentation for compatibility between Helm and Kubernetes versions.
 
-## Add Antrea Helm chart's repository:
+## Adding Antrea Helm chart's repository:
 ```
 helm repo add antrea https://charts.antrea.io
 helm repo update
