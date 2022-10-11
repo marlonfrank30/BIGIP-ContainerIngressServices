@@ -68,15 +68,17 @@ This will install the latest available version of Antrea. You can also install a
 
 For the step below, edit the configmap used by antrea and add the following entry under:
 ```
-  **featureGates:** 
+  featureGates: 
   
-    **NodePortLocal: true** 
+    NodePortLocal: true 
   ```
+  
     and also 
-  ```
-  **nodePortLocal:** 
   
-    **enable: true**
+  ```
+   nodePortLocal: 
+  
+     enable: true
 ```
   
 ```
