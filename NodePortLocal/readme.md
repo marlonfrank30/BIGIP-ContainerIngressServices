@@ -18,6 +18,34 @@ chmod 700 get_helm.sh
 
 more info is available here https://helm.sh/docs/intro/install/
 
+
+## Deploying Antrea on a Cluster with Existing CNI
+The instructions above only apply when deploying Antrea in a new cluster. If you need to migrate your existing cluster from another CNI plugin to Antrea, you will need to do the following:
+
+* Delete previous CNI, including all resources (K8s objects, iptables rules, interfaces, …) created by that CNI.
+* Deploy Antrea (next item below).
+* Restart all Pods in the CNI network in order for Antrea to set-up networking for them. This does not apply to Pods which use the Node’s network namespace (i.e. Pods configured with hostNetwork: true). You may use kubectl drain to drain each Node or reboot all your Nodes.
+
+While this is in-progress, networking will be disrupted in your cluster. After deleting the previous CNI, existing Pods may not be reachable anymore.
+
+For example, when migrating from Flannel to Antrea, you will need to do the following:
+
+* 1) Delete Flannel with 
+```
+kubectl delete -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml <path to your Flannel YAML manifest>.
+```
+
+* 2) Delete Flannel bridge and tunnel interface with 
+```
+ip link delete flannel.1 && ip link delete flannel cni0 on each Node.
+```
+  
+* 3) Ensure requirements are satisfied.
+
+* 4) [Deploy Antrea](#Installing Antrea with Helm)
+* 5) Drain and uncordon Nodes one-by-one. For each Node, run kubectl drain --ignore-daemonsets <node name> && kubectl uncordon <node name>. The --ignore-daemonsets flag will ignore DaemonSet-managed Pods, including the Antrea Agent Pods. If you have any other DaemonSet-managed Pods (besides the Antrea ones and system ones such as kube-proxy), they will be ignored and will not be drained from the Node. Refer to the Kubernetes documentation for more information. Alternatively, you can also restart all the Pods yourself, or simply reboot your Nodes.
+  
+  
 ## Prerequisites 
 
 Ensure that the necessary requirements for running Antrea are met https://antrea.io/docs/main/docs/getting-started/#ensuring-requirements-are-satisfied.
