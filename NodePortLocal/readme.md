@@ -19,7 +19,7 @@ chmod 700 get_helm.sh
 more info is available here https://helm.sh/docs/intro/install/
 
 
-## Deploying Antrea on a Cluster with Existing CNI
+## Deploying Antrea on a Cluster with Existing Flannel CNI
 The instructions above only apply when deploying Antrea in a new cluster. If you need to migrate your existing cluster from another CNI plugin to Antrea, you will need to do the following:
 
 * Delete previous CNI, including all resources (K8s objects, iptables rules, interfaces, …) created by that CNI.
