@@ -35,12 +35,12 @@ For example, when migrating from Flannel to Antrea, you will need to do the foll
 kubectl delete -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml <path to your Flannel YAML manifest>.
 ```
 
-* 2) Delete Flannel bridge and tunnel interface with 
+* 2) Delete Flannel bridge and tunnel interface on each Node with 
 ```
-ip link delete flannel.1 && ip link delete flannel cni0 on each Node.
+ip link delete flannel.1 && ip link delete flannel cni0 
 ```
   
-* 3) Ensure requirements are satisfied.
+* 3) Ensure requirements are satisfied (where everything pod related to flannel is deleted).
 
 * 4) [Deploy Antrea](#Installing Antrea with Helm)
 * 5) Drain and uncordon Nodes one-by-one. For each Node, run kubectl drain --ignore-daemonsets <node name> && kubectl uncordon <node name>. The --ignore-daemonsets flag will ignore DaemonSet-managed Pods, including the Antrea Agent Pods. If you have any other DaemonSet-managed Pods (besides the Antrea ones and system ones such as kube-proxy), they will be ignored and will not be drained from the Node. Refer to the Kubernetes documentation for more information. Alternatively, you can also restart all the Pods yourself, or simply reboot your Nodes.
@@ -65,7 +65,7 @@ helm install antrea antrea/antrea --namespace kube-system
 ```
 This will install the latest available version of Antrea. You can also install a specific version of Antrea (>= v1.8.0) with --version <TAG>.
 
-## Upgrading Antrea with Helm
+## Upgrading Antrea with Helm (optional)
   
 To upgrade the Antrea Helm chart, use the following commands:
   
