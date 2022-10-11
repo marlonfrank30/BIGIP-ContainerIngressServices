@@ -275,7 +275,7 @@ serviceaccount</td>
 
 **Source:** https://clouddocs.f5.com/containers/latest/userguide/kubernetes/#chart-parameters
 
-## Creating VXLAN Tunnels on Kubernetes Cluster
+## Creating Partitions and SelfIPs on Kubernetes Cluster
 This configuration is for Standalone BIG-IP.
 
 Log in to BIG-IP and create a partition called kube80 for CIS.
@@ -283,7 +283,7 @@ Log in to BIG-IP and create a partition called kube80 for CIS.
 tmsh create auth partition kube80
 ```
 
-Create the VXLAN tunnel self IP.
+Create the selfIP.
 ```
 tmsh create net self ocp-cis-ingress-self address 10.244.20.249/255.255.0.0 allow-service none vlan fl-vxlan
 ```
@@ -291,7 +291,7 @@ Save the configuration.
 ```
 tmsh save sys config
 ```
-Before deploying CIS in ClusterIP mode, you need to configure BIG-IP as a node in the Kubernetes cluster. To do so you will need to modify f5-node.yaml with the MAC address auto-created from the previous steps. Run the following command at bigip1. 
+Before deploying CIS in ClusterIP mode, you need to configure BIG-IP as a node in the Kubernetes cluster. Run the following command at bigip1. 
   
 <div class="literal-block-wrapper docutils container" id="id8">
 <div class="code-block-caption"><span class="caption-text">f5-node.yaml</span><a class="headerlink" href="#id8" title="Permalink to this code"></a></div>
