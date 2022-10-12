@@ -38,10 +38,10 @@ args:
   # KUBERNETES
   default_ingress_ip: 10.10.0.100
   # kubeconfig:
-  # namespaces: ["cis-app", "default"]
+  # namespaces: ["default"]
   # namespace_label:
   # node_label_selector:
-  pool_member_type: nodeport #cluster
+  pool_member_type: nodeport
   # resolve_ingress_names:
   # running_in_cluster:
   # use_node_internal:
