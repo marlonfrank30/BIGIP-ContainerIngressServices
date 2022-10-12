@@ -95,7 +95,7 @@ kubectl delete pods -n kube-system $(oc get pods -n kube-system | awk '{ print $
 **Note:** If the above command doesn't delete all the pods under kube-system namespace, reboot ALL the nodes
   
 ```
-ssh marlon@10.1.10.86
+ssh marlon@node1
 sudo reboot
 ```
   
