@@ -272,6 +272,7 @@ serviceaccount</td>
 
 ## Creating Partitions and SelfIPs on Kubernetes Cluster
 **Note: for the BIGIP CIS as NodePortLocal you don't need a flannel VLXAN tunnel**
+
 This configuration is for Standalone BIG-IP.
 
 Log in to BIG-IP and create a partition called kube80 for CIS.
