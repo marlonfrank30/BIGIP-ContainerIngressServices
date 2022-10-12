@@ -327,13 +327,33 @@ Before deploying CIS in NodePortLocal mode, you need to configure BIG-IP as a no
 </ol>
 
 
-## Create any webserver inside the cluster to be used by CIS
+## Creating a webserver inside the cluster to be used by CIS
 I've used nginx as my webserver enginee but any other could have been installed such as apache
 
 ```
 kubectl create -f VirtualServer.yaml
 ```
 
+verifing if the pods will be annotated with nodeportlocal.antrea.io which has nodeport and IP information.
+
+```
+marlon@k8s-master:~/CIS/NodePortLocal$ oc describe pods nginx-85b98978db-ngwbf
+Name:         nginx-85b98978db-ngwbf
+Namespace:    default
+Priority:     0
+Node:         k8s-node1/10.1.10.92
+Start Time:   Tue, 11 Oct 2022 22:49:50 +0000
+Labels:       app=nginx
+              pod-template-hash=85b98978db
+**Annotations:  nodeportlocal.antrea.io: [{"podPort":80,"nodeIP":"10.1.10.92","nodePort":61003,"protocol":"tcp","protocols":["tcp"]}]**
+Status:       Running
+IP:           10.244.2.16
+IPs:
+  IP:           10.244.2.16
+Controlled By:  ReplicaSet/nginx-85b98978db
+```
+
+  
 ## Uninstalling Helm Chart
 Run the following command to uninstall the chart.
 
