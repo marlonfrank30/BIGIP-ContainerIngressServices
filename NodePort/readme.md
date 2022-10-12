@@ -200,17 +200,6 @@ Save the configuration.
 ```
 tmsh save sys config
 ```
-Before deploying CIS in NodePort mode, you need to configure BIG-IP as a node in the Kubernetes cluster. 
-
-Create the BIG-IP node:
-```
-kubectl create -f f5-node.yaml
-```
-
-Verify “bigip1” node is created:
-```
-kubectl get nodes
-```
 
 ## Create AS3 ConfigMap
 This section uses the command
