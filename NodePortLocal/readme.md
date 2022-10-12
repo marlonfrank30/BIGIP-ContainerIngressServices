@@ -352,6 +352,8 @@ IPs:
   IP:           10.244.2.16
 Controlled By:  ReplicaSet/nginx-85b98978db
 ```
+  
+CIS reads info from nodeportlocal.antrea.io to add endpoint info for virtualserver on BIGIP.
 
 ## Uninstalling Helm Chart
 Run the following command to uninstall the chart.
