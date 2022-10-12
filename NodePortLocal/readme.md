@@ -334,7 +334,7 @@ I've used nginx as my webserver enginee but any other could have been installed 
 kubectl create -f VirtualServer.yaml
 ```
 
-verifing if the pods will be annotated with nodeportlocal.antrea.io which has nodeport and IP information.
+Verifyng if the pods will be annotated with nodeportlocal.antrea.io which has nodeport and IP information.
 
 ```
 marlon@k8s-master:~/CIS/NodePortLocal$ oc describe pods nginx-85b98978db-ngwbf
@@ -353,7 +353,6 @@ IPs:
 Controlled By:  ReplicaSet/nginx-85b98978db
 ```
 
-  
 ## Uninstalling Helm Chart
 Run the following command to uninstall the chart.
 
