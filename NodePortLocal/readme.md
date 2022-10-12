@@ -92,6 +92,13 @@ and then delete all the pods in kube-system namespace in order to use the newly 
 kubectl delete pods -n kube-system $(oc get pods -n kube-system | awk '{ print $1 }')
 ```  
 
+**Note:** If the above command doesn't delete all the pods under kube-system namespace, reboot ALL the nodes
+  
+```
+ssh marlon@10.1.10.86
+sudo reboot
+```
+  
 ## Installing BIGIP CIS in NodePortLocal mode
 Add BIG-IP credentials as K8S secrets.
 
