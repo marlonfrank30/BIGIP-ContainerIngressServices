@@ -279,53 +279,6 @@ Save the configuration.
 ```
 tmsh save sys config
 ```
-Before deploying CIS in NodePortLocal mode, you need to configure BIG-IP as a node in the Kubernetes cluster. Run the following command at bigip1. 
-  
-<div class="literal-block-wrapper docutils container" id="id8">
-<div class="code-block-caption"><span class="caption-text">f5-node.yaml</span><a class="headerlink" href="#id8" title="Permalink to this code"></a></div>
-<div class="highlight-yaml notranslate"><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span><span class="w"></span>
-<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Node</span><span class="w"></span>
-<span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bigip1</span><span class="w"></span>
-<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="c1">#Replace IP with self IP for your deployment</span><span class="w"></span>
-<span class="w">    </span><span class="nt">flannel.alpha.coreos.com/public-ip</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;10.1.10.249&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="c1">#</span><span class="w"></span>
-<span class="w">    </span><span class="nt">flannel.alpha.coreos.com/backend-data</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;{&quot;VtepMAC&quot;:&quot;2c:c2:60:23:0c:58&quot;}&#39;</span><span class="w"></span>
-<span class="w">    </span><span class="nt">flannel.alpha.coreos.com/backend-type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;vxlan&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="nt">flannel.alpha.coreos.com/kube-subnet-manager</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="w"></span>
-<span class="nt">spec</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="c1">#Replace Subnet with your BIG-IP Flannel Subnet</span><span class="w"></span>
-<span class="w">  </span><span class="nt">podCIDR</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;10.244.20.0/24&quot;</span><span class="w"></span>
-</pre></div></td></tr></table></div>
-</div>
-</div>
-</li>
-<li><p class="first">Create the BIG-IP node:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">create</span> <span class="o">-</span><span class="n">f</span> <span class="n">f5</span><span class="o">-</span><span class="n">node</span><span class="o">.</span><span class="n">yaml</span>
-</pre></div>
-</div>
-</li>
-<li><p class="first">Verify “bigip1” node is created:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kubectl</span> <span class="n">get</span> <span class="n">nodes</span>
-</pre></div>
-</div>
-</li>
-</ol>
-
 
 ## Creating a webserver inside the cluster to be used by CIS
 I've used nginx as my webserver enginee but any other could have been installed such as apache
