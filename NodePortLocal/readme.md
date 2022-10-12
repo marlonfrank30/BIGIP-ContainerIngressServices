@@ -345,7 +345,7 @@ Node:         k8s-node1/10.1.10.92
 Start Time:   Tue, 11 Oct 2022 22:49:50 +0000
 Labels:       app=nginx
               pod-template-hash=85b98978db
-**Annotations:  nodeportlocal.antrea.io: [{"podPort":80,"nodeIP":"10.1.10.92","nodePort":61003,"protocol":"tcp","protocols":["tcp"]}]**
+Annotations:  nodeportlocal.antrea.io: [{"podPort":80,"nodeIP":"10.1.10.92","nodePort":61003,"protocol":"tcp","protocols":["tcp"]}]
 Status:       Running
 IP:           10.244.2.16
 IPs:
